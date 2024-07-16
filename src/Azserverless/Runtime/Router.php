@@ -76,7 +76,7 @@ class Router {
 
     private function getLogs() {
         $logs = [];
-        $formatter = new LineFormatter("[%datetime%] %channel%.%level_name%: %message%");
+        $formatter = new LineFormatter("[%datetime%] %channel%.%level_name%: %message%", null, true);
         foreach($this->logHandler->getRecords() as $record) {
             $logs[] = $formatter->format($record);
         }
